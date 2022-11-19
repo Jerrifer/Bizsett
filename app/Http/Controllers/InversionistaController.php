@@ -40,7 +40,7 @@ class InversionistaController extends Controller
         $emprendimientos =Emprendimiento::all();
         $users =User::all();
 
-        return view('create_inversiones', compact('emprendimientos', 'users', 'emprendimiento'));
+        return view('inversionistas.create_inversiones', compact('emprendimientos', 'users', 'emprendimiento'));
     }
 
 

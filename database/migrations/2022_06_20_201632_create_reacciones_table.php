@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('reacciones', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('publicacion_id')->nullable();
+            $table->unsignedBigInteger('publicacione_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('set null');
 
-            $table->foreign('publicacion_id')->references('id')->on('publicaciones')
+            $table->foreign('publicacione_id')->references('id')->on('publicaciones')
                 ->onDelete('set null');
             $table->timestamps();
         });

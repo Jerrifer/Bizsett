@@ -38,7 +38,7 @@ class PublicacioneController extends Controller
         if (auth()->user()->tipopersona_id == '2'){
             return view('publicaciones.create', compact('emprendimientos'));
         }else{
-            return view('create_post', compact('emprendimientos'));
+            return view('publicaciones.create_post', compact('emprendimientos'));
         }
     }
 
@@ -54,24 +54,14 @@ class PublicacioneController extends Controller
         if (auth()->user()->tipopersona_id == '2'){
             
             $publicacione = new Publicacione();
-            $publicacione->descripcion = $request->descripcion;
-            $publicacione->emprendimiento_id = $request->emprendimiento_id;
             
-            $publicacione->save();
+            $file=$request->file("url_contenido");
+            $nombreArchivo = "img_".time().".".$file->guessExtension();
+            $request->file('url_contenido')->storeAs('multimedia_folder', $nombreArchivo );
+            $temp= $publicacione->create(['descripcion'=>$request->descripcion, 'emprendimiento_id'=>$request->emprendimiento_id])->multimedias()->create(['url_contenido'=>$nombreArchivo]);
+            $publicacione=Publicacione::find($temp->multimediaable_id);
 
-
-
-            $multimedia = new Multimedia();
-            
-            $multimedia['url_contenido'] = time() . '_' . $request->file(key: 'url_contenido')->getClientOriginalName();
-            $request->file(key: 'url_contenido')->storeAs(path:'multimedia_folder', name: $multimedia['url_contenido']);
-            
-
-            $multimedia->save();
-
-
-            
-            return redirect()->route('publicaciones.multimedia', compact('multimedia', 'publicacione'));
+            return redirect()->route('publicaciones.index');
         }
         else{
             // $publicacione = new Publicacione();
@@ -111,7 +101,7 @@ class PublicacioneController extends Controller
             $temp= $publicacione->create(['descripcion'=>$request->descripcion, 'emprendimiento_id'=>$Emprendimiento])->multimedias()->create(['url_contenido'=>$nombreArchivo]);
             $publicacione=Publicacione::find($temp->multimediaable_id);
 
-            //return 'ok';
+                 
             return redirect(route('home'));
         }
        
@@ -133,7 +123,7 @@ class PublicacioneController extends Controller
         if (auth()->user()->tipopersona_id == '2'){
             return view('publicaciones.edit', compact('publicacione', 'emprendimientos', 'multimedia'));
         }else{
-            return view('edit_post', compact('publicacione', 'emprendimientos', 'multimedia'));
+            return view('publicaciones.edit_post', compact('publicacione', 'emprendimientos', 'multimedia'));
         }
     }
 

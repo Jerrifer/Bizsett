@@ -49,7 +49,7 @@ class NotificacioneController extends Controller
     
 
     public function read(Notificacione $notificacione){
-        $user = Auth::user();
+            $user = Auth::user();
                 
             $notificacione->reading = 'true';
             $notificacione->save();

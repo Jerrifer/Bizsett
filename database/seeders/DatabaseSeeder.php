@@ -36,6 +36,20 @@ class DatabaseSeeder extends Seeder
 
        $this->call(MultimediaSeeder::class);
 
+       $this->call(InversionistaSeeder::class);
+
+       $this->call(EmpleoSeeder::class);
+
+       $this->call(BuzonSeeder::class);
+
+       $this->call(ComentarioSeeder::class);
+
+       $this->call(ReaccioneSeeder::class);
+
+       $this->call(FollowerSeeder::class);
+
+       $this->call(NotificacioneSeeder::class);
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

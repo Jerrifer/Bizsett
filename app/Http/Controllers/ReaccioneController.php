@@ -18,7 +18,7 @@ class ReaccioneController extends Controller
 
         $reaccione = new Reaccione();
 
-        $reaccione->publicacion_id = $publicacione;
+        $reaccione->publicacione_id = $publicacione;
         $reaccione->user_id = auth()->user()->id;
 
         $reaccione->save();

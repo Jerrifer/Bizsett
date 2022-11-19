@@ -42,38 +42,40 @@
           </div>
             {{-- Descripción del emprendimiento --}}
           <p>{{$emprendimiento->descripcion}}</p> 
-
-            <?php 
-              $follow='no';
-              for ($i=0; $i < 1;) { 
-                foreach ($followers as $follower){
-                  if (auth()->user()->id == $follower->user_id){
-                    if ($follower->emprendimiento_id == $emprendimiento->id){
-                            $follow='si';
-                      }else{
-                          $i++;
+            @auth
+              <?php 
+                $follow='no';
+                for ($i=0; $i < 1;) { 
+                  foreach ($followers as $follower){
+                    if (auth()->user()->id == $follower->user_id){
+                      if ($follower->emprendimiento_id == $emprendimiento->id){
+                              $follow='si';
+                        }else{
+                            $i++;
+                        }
                       }
+                    }$i=1;
                   }
-                }$i=1;
-              }
-            ?>
-            {{-- Botón de seguir --}}
-            @if($follow == 'si')
-              <form action="{{route('followers.destroy', $follower)}}" method="POST">
-                @csrf
-                @method('delete')
-                <button type="submit" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">
-                  Siguiendo
-                </button>
-              </form>
-            @else
-              <form action="{{route('followers.store', $emprendimiento)}}" method="POST">
-                @csrf
-                <button type="submit" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">
-                  Seguir
-                </button>
-              </form>
-            @endif
+                ?>
+
+                {{-- Botón de seguir --}}
+                @if($follow == 'si')
+                  <form action="{{route('followers.destroy', $follower)}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">
+                      Siguiendo
+                    </button>
+                  </form>
+                @else
+                  <form action="{{route('followers.store', $emprendimiento)}}" method="POST">
+                    @csrf
+                    <button type="submit" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">
+                      Seguir
+                    </button>
+                  </form>
+              @endif
+            @endauth
             
               <div class="row text-center m-t-20">
                   <div class="col-lg-4 col-md-4 m-t-20">

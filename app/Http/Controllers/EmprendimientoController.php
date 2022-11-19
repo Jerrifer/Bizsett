@@ -33,7 +33,7 @@ class EmprendimientoController extends Controller
         if (auth()->user()->tipopersona_id == '2'){
             return view('emprendimientos.create', compact('users'));
         }else{
-            return view('create_emprendimiento', compact('users'));
+            return view('emprendimientos.create_emprendimiento', compact('users'));
         }
     }
 

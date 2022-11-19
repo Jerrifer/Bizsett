@@ -117,7 +117,7 @@
                   for ($i=0; $i < 1;) { 
                     foreach ($reacciones as $reaccione){
                       if (auth()->user()->id == $reaccione->user_id){
-                        if ($reaccione->publicacion_id == $publicacione->id){
+                        if ($reaccione->publicacione_id == $publicacione->id){
                                 $reac='si';
                           }else{
                               $i++;
@@ -154,7 +154,7 @@
                   <?php 
                       $cont=0;
                       foreach($reacciones as $reaccione){
-                          if($reaccione->publicacion_id == $publicacione->id){
+                          if($reaccione->publicacione_id == $publicacione->id){
                               $cont=$cont+1;
                           }
                       }
@@ -167,7 +167,7 @@
                   <?php 
                       $coment=0;
                       foreach($comentarios as $comentario){
-                          if($comentario->publicacion_id == $publicacione->id){
+                          if($comentario->publicacione_id == $publicacione->id){
                               $coment=$coment+1;
                           }
                       }
@@ -213,7 +213,7 @@
                   @foreach ($comentarios as $comentario)
                     @foreach ($users as $user)
                       @if ($comentario->user_id == $user->id)
-                        @if ($comentario->publicacion_id == $publicacione->id)
+                        @if ($comentario->publicacione_id == $publicacione->id)
                           <div class="col-8">
                             <div class="row">
                               <div class="col-2">

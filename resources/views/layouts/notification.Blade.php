@@ -1,13 +1,16 @@
   <?php
     $cont = 0;
+    $Tcont = 0;
     $user = Auth::user();
   
     foreach($user->notificaciones as $notificacione){
+          $Tcont=$Tcont+1;
       if ($notificacione->reading == 'false') {
           $cont=$cont+1;
       }   
     }
     $cont;
+    $Tcont;
   ?>
 
       {{-- Bell de notificaciones (Dropdown)--}}
@@ -21,8 +24,8 @@
         <img src="{{asset('storage\img\bxs-bell.svg')}}" alt="bell" style="width: 20px; height: 20px; color:#f9ae00">
     </a>
     {{-- Todo el contenido dentro del dropdown--}}
-    <div id="divs" class="dropdown-menu text-center" aria-labelledby="navbarDropdown" style="background-color:rgba(119, 119, 119, 0.705); left: 78%; border-radius: 15px; width: 280px; height: 100%;" >
-      @if ($cont <= 0)
+    <div id="divs" class="dropdown-menu text-center" aria-labelledby="navbarDropdown" style="background-color:rgba(71, 71, 71, 0.705); left: 78%; border-radius: 15px; width: 280px;" >
+      @if ($Tcont <= 0)
         <p>No tienes notificaciones</p>
       @endif
         {{-- Notification card --}}

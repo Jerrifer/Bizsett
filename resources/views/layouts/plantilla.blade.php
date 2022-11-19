@@ -34,7 +34,7 @@
 
   <body style="background-; font-family: 'Titillium Web', sans-serif;"> 
 
-      <nav class="navbar navbar-expand-lg p-1 fix-top bg-dark" style="height: 50px; ">
+      <nav class="navbar navbar-expand-lg p-1 fix-top" style="height: 50px; ">
         {{-- Logo --}}
             <a class="navbar-brand" style="color:#ffc400" href="{{route('home')}}">
               <img src="{{asset('storage\img\logo_Bsztt.png')}}" alt="logo_bizsett" height="40px" width="40px">

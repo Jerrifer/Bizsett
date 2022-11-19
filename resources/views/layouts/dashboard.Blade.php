@@ -58,113 +58,55 @@
          <span class="tooltip">Dashboard</span>
       </li>
       <li>
-       <a href="#">
+       <a href="{{route('users.index')}}">
          <i class='bx bx-user' ></i>
          <span class="links_name">User</span>
        </a>
        <span class="tooltip">User</span>
      </li>
-     {{--ññ--}}
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <li>
-          <h2 class="accordion-header" id="headingThree">
-            <a class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <i class='bx bxs-cabinet'></i>
-              <span class="links_name">Cruds</span>
-            </a>
-            <span class="tooltip">Cruds</span>
-          </h2>
-          </li>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              {{-- Usuarios --}}
-              <li>
-                <a href="{{route('users.index')}}">
-                  <i class='bx bxs-chevron-right'></i>
-                  <span class="links_name">Usuarios</span>
-                </a>
-                <span class="tooltip">Usuarios</span>
-              </li>
-              {{-- Emprendimientos --}}
-              <li>
-                <a href="{{route('emprendimientos.index')}}">
-                  <i class='bx bxs-chevron-right'></i>
-                  <span class="links_name">Emprendimientos</span>
-                </a>
-                <span class="tooltip">Emprendimientos</span>
-              </li>
-              {{-- Publicaciones --}}
-              <li>
-                <a href="{{route('publicaciones.index')}}">
-                  <i class='bx bxs-chevron-right'></i>
-                  <span class="links_name">Publicaciones</span>
-                </a>
-                <span class="tooltip">Publicaciones</span>
-              </li>
-              {{-- Inversiones --}}
-              <li>
-                <a href="{{route('inversionistas.index')}}">
-                  <i class='bx bxs-chevron-right'></i>
-                  <span class="links_name">Inversiones</span>
-                </a>
-                <span class="tooltip">Inversiones</span>
-              </li>
-              {{-- Empleos --}}
-              <li>
-                <a href="{{route('empleos.index')}}">
-                  <i class='bx bxs-chevron-right'></i>
-                  <span class="links_name">Empleos</span>
-                </a>
-                <span class="tooltip">Empleos</span>
-              </li>
-               {{-- Buzones --}}
-               <li>
-                <a href="{{route('buzons.index')}}">
-                  <i class='bx bxs-chevron-right'></i>
-                  <span class="links_name">Buzones</span>
-                </a>
-                <span class="tooltip">Buzones</span>
-              </li>
-            </div>
-          </div>
-        </div>
-      </div>
+     
      <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
+       <a href="{{route('emprendimientos.index')}}">
+        <i class='bx bx-store' ></i>
+         <span class="links_name">Emprendimientos</span>
        </a>
-       <span class="tooltip">Messages</span>
+       <span class="tooltip">Emprendimientos</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">Analytics</span>
+      <a href="{{route('publicaciones.index')}}">
+        <i class='bx bx-image'></i>
+        <span class="links_name">Publicaciones</span>
+      </a>
+      <span class="tooltip">Publicaciones</span>
+    </li>
+     <li>
+       <a href="{{route('inversionistas.index')}}">
+        <i class='bx bx-dollar-circle' ></i>
+         <span class="links_name">Inversiones</span>
        </a>
-       <span class="tooltip">Analytics</span>
+       <span class="tooltip">Inversiones</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-folder' ></i>
-         <span class="links_name">File Manager</span>
+       <a href="{{route('empleos.index')}}">
+        <i class='bx bx-file'></i>
+         <span class="links_name">Hojas de vida</span>
        </a>
-       <span class="tooltip">Files</span>
+       <span class="tooltip">Hojas de vida</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Order</span>
+       <a href="{{route('buzons.index')}}">
+        <i class='bx bxs-cabinet'></i>
+         <span class="links_name">Buzón PQRS</span>
        </a>
-       <span class="tooltip">Order</span>
+       <span class="tooltip">Buzón PQRS</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-heart' ></i>
-         <span class="links_name">Saved</span>
-       </a>
-       <span class="tooltip">Saved</span>
-     </li>
+      <a href="#">
+        <i class='bx bx-chat' ></i>
+        <span class="links_name">Messages</span>
+      </a>
+      <span class="tooltip">Messages</span>
+    </li>
      <li>
        <a href="#">
          <i class='bx bx-cog' ></i>
@@ -174,14 +116,16 @@
      </li>
      <li class="profile">
         <a href="{{route('login.destroy')}}">
-         <i class='bx bx-log-out' id="log_out" ></i>
+          <i class='bx bx-door-open' ></i>
+         <span class="links_name">Cerrar Sesión</span>
         </a>
+        <span class="tooltip">Cerrar Sesión</span>
      </li>
     </ul>
   </div>
 
   <section class="home-section">
-      <div class="text">Dashboard</div>
+      
 
       @yield('content')
 

@@ -57,7 +57,7 @@
       <tfoot>
          <nav aria-label="Page navigation example">
             <ul class="pagination">
-               <td class="pagination-dark" colspan="4">{{$users->links()}}</td>
+               <td class="pagination-dark" colspan="4">{{$inversionistas->links()}}</td>
             </ul>
          </nav>
       </tfoot>

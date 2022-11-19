@@ -36,7 +36,7 @@ class EmpleoController extends Controller
         $emprendimientos =Emprendimiento::all();
         $users =User::all();
 
-        return view('create_empleo', compact('emprendimientos', 'users', 'emprendimiento'));
+        return view('empleos.create_empleo', compact('emprendimientos', 'users', 'emprendimiento'));
     }
 
 

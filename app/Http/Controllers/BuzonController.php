@@ -7,6 +7,7 @@ use App\Models\Persona;
 use App\Models\Buzon;
 use App\Http\Requests\StoreBuzon;
 use App\Models\User;
+use Illuminate\Support\Facades\Http;
 
 class BuzonController extends Controller
 {
@@ -32,7 +33,7 @@ class BuzonController extends Controller
         if (auth()->user()->tipopersona_id == '2'){
             return view('buzones.create', compact('users'));
         }else{
-            return view('create_buzon', compact('users'));
+            return view('buzones.create_buzon', compact('users'));
         }
     }
 

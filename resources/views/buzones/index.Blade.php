@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Buzon')
+@section('title', 'Buzón')
 
 @section('content')
 
@@ -55,7 +55,7 @@
       <tfoot>
          <nav aria-label="Page navigation example">
             <ul class="pagination">
-               <td class="pagination-dark" colspan="4">{{$users->links()}}</td>
+               <td class="pagination-dark" colspan="4">{{$buzons->links()}}</td>
             </ul>
          </nav>
       </tfoot>

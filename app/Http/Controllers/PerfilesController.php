@@ -56,12 +56,13 @@ class PerfilesController extends Controller
         $users = User::all();
         $comentarios =Comentario::all();
         $reacciones =Reaccione::all();
+        $followers = Follower::all();
         $reac = 'no';
 
 
         foreach ($emprendimientos as $emprendimiento){
             if (auth()->user()->id==$emprendimiento->user_id){
-                return view('perfilemp', compact('publicaciones','multimedias', 'emprendimiento', 'users', 'empleos', 'emprendimientos', 'comentarios', 'reacciones', 'reac'));
+                return view('perfilemp', compact('publicaciones','multimedias', 'emprendimiento', 'users', 'followers','empleos', 'emprendimientos', 'comentarios', 'reacciones', 'reac'));
             }else{
                 $emp = 1;
             }
