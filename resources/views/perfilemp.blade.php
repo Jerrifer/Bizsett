@@ -33,10 +33,10 @@
             
           <div>
             {{-- Nombre del emprendimiento --}}
-          <p class="h1 font-bold">{{$emprendimiento->nombre_emprendimiento}}</p>
+          <p class="h1 font-bold  text-warning">{{$emprendimiento->nombre_emprendimiento}}</p>
           </div>
             {{-- Descripción del emprendimiento --}}
-          <p>{{$emprendimiento->descripcion}}</p> 
+          <p class="text-white">{{$emprendimiento->descripcion}}</p> 
             
               <div class="row text-center m-t-20">
                   <div class="col-lg-4 col-md-4 m-t-20">
@@ -51,8 +51,8 @@
                       $public;
                     ?>
                   {{-- Número de publicaciones, de seguidores y seguidos --}}
-                    <p class="h3 m-b-0 font-light font-bold">{{$public}}</p>
-                    <p class="h3 m-b-0 font-light ">Publicados</p>
+                    <p class="h3 m-b-0 font-light font-bold text-white">{{$public}}</p>
+                    <p class="h3 m-b-0 font-light  text-white">Publicados</p>
                   </div>
                   <div class="col-lg-4 col-md-4 m-t-20">
                     <?php 
@@ -64,8 +64,8 @@
                       }
                       $seguidores;
                     ?>
-                    <p class="h3 m-b-0 font-light font-bold">{{$seguidores}}</p>
-                    <p class="h3 m-b-0 font-light ">Seguidores</p>
+                    <p class="h3 m-b-0 font-light font-bold  text-white">{{$seguidores}}</p>
+                    <p class="h3 m-b-0 font-light  text-white">Seguidores</p>
                   </div>
                   <div class="col-lg-4 col-md-4 m-t-20">
                     <?php 
@@ -77,8 +77,8 @@
                       }
                       $seguidos;
                     ?>
-                    <p class="h3 m-b-0 font-light font-bold">{{$seguidos}}</p>
-                    <p class="h3 m-b-0 font-light ">Seguidos</p>
+                    <p class="h3 m-b-0 font-light font-bold  text-white">{{$seguidos}}</p>
+                    <p class="h3 m-b-0 font-light  text-white">Seguidos</p>
                   </div>
               </div>
         </div>

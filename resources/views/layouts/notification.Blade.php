@@ -21,7 +21,7 @@
             {{$cont}}
         </span>
       @endif
-        <img src="{{asset('storage\img\bxs-bell.svg')}}" alt="bell" style="width: 20px; height: 20px; color:#f9ae00">
+        <img src="{{asset('storage\img\bxs-bell.svg')}}" alt="bell" style="width: 20px; height: 20px">
     </a>
     {{-- Todo el contenido dentro del dropdown--}}
     <div id="divs" class="dropdown-menu text-center" aria-labelledby="navbarDropdown" style="background-color:rgba(71, 71, 71, 0.705); left: 78%; border-radius: 15px; width: 280px;" >

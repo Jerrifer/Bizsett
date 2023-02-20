@@ -6,9 +6,9 @@
 
 <br><br>
 
-<div class="block mx-auto my-12 p-8 w-1/3 shadow-lg" style="border-radius: 15px; background-color:rgba(124, 124, 124, 0.705) ;">
+<div class="block mx-auto my-12 p-8 w-1/3 shadow-lg bg-dark" style="border-radius: 15px">
 
-    <h1 class="text-3xl text-center font-bold">Login</h1>
+    <h1 class="text-3xl text-center font-bold text-black">Login</h1>
 
     <form action="" class="mt-4" method="POST">
     @csrf

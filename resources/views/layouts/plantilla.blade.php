@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@yield('title')</title>
+  <title>Bizsett | @yield('title')</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -34,73 +34,57 @@
 
   <body style="background-; font-family: 'Titillium Web', sans-serif;"> 
 
-      <nav class="navbar navbar-expand-lg p-1 fix-top" style="height: 50px; ">
-        {{-- Logo --}}
-            <a class="navbar-brand" style="color:#ffc400" href="{{route('home')}}">
-              <img src="{{asset('storage\img\logo_Bsztt.png')}}" alt="logo_bizsett" height="40px" width="40px">
-            </a>
-            
-            {{-- Buscador --}}
-            
-            <div class="col-5">
-              <form method="GET">
-                <div class="d-flex justify-content-start ">
-                  <div class="buscar">
-                    <input type="search" name="search" placeholder="Buscar" required>
-                      <div class="btns">
-                        <button type="submit">
-                          <i class="fas fa-search icon"></i> 
-                        </button>
-                      </div>
-                  </div>
+    <nav class="navbar navbar-expand-lg bg-dark p-1 fix-top m-2" style="height: 50px; border-radius: 12px">
+      {{-- Logo --}}
+          <a class="navbar-brand" style="color:#ffc400" href="{{route('home')}}">
+            <img src="{{asset('storage\img\logo_Bsztt.png')}}" alt="logo_bizsett" height="40px" width="40px">
+          </a>
+          {{-- Buscador --}}
+          <div class="col-5">
+            <form method="GET">
+              <div class="d-flex justify-content-start ">
+                <div class="buscar">
+                  <input type="search" name="search" placeholder="Buscar" required>
+                    <div class="btns">
+                      <button type="submit">
+                        <i class="fas fa-search icon"></i> 
+                      </button>
+                    </div>
                 </div>
-              </form>
-            </div>
-            
-            {{-- botón responsive --}}
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            {{-- Si se ha iniciado sesión --}}
-          @auth
-
-            <div class="collapse navbar-collapse flex justify-end" id="navbarSupportedContent">
-              
-              
-              <ul class="ml-auto flex justify-end pt-1">
-                
-                {{-- Notificaciones --}}
-                
-                @include('layouts.notification')
-
-                {{-- Foto usuario como dropdown--}}
-                <li class="m-1">
-
-                  <?php $user=auth()->user(); ?>
-                  
-                  @include('layouts.avatar')
-                  
-                </li>
-              </ul>
-              
-              {{-- Si no se ha iniciado sesión --}}
-          @else
-                  
-                  <ul class="w-1/2 px-2 ml-auto flex justify-end pt-1">
-                    {{-- Iniciar sesión (log in) --}}
-                    <li class="mx-6">
-                      <a class="font-semibold hover:bg-black py-2 px-3 rounded-md" style="color:#F9AE00; " href="{{route('login.index')}}">Login</a>
-                    </li>
-                    {{-- Registrarse --}}
-                    <li class="mx-6">
-                      <a class="font-semibold py-2 px-3 rounded-md hover:bg-black " style="color:#F9AE00" href="{{route('register.index')}}">Registrarse</a>
-                    </li>
-                  </ul>
-            </div>
-          @endauth
-          
-      </nav>
+              </div>
+            </form>
+          </div>
+          {{-- botón responsive --}}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          {{-- Si se ha iniciado sesión --}}
+        @auth
+          <div class="collapse navbar-collapse flex justify-end" id="navbarSupportedContent">
+            <ul class="ml-auto flex justify-end pt-1">
+              {{-- Notificaciones --}}
+              @include('layouts.notification')
+              {{-- Foto usuario como dropdown--}}
+              <li class="m-1">
+                <?php $user=auth()->user(); ?>
+                @include('layouts.avatar')
+              </li>
+            </ul>
+            {{-- Si no se ha iniciado sesión --}}
+        @else
+                <ul class="w-1/2 px-2 ml-auto flex justify-end pt-1">
+                  {{-- Iniciar sesión (log in) --}}
+                  <li class="mx-2">
+                    <a class="font-semibold hover:bg-black py-2 px-1 rounded-md" style="color:#F9AE00; " href="{{route('login.index')}}">Sig in</a>
+                  </li>
+                  {{-- Registrarse --}}
+                  <li class="mx-2">
+                    <a class="font-semibold py-2 px-1 rounded-md hover:bg-black " style="color:#F9AE00" href="{{route('register.index')}}">Sin up</a>
+                  </li>
+                </ul>
+          </div>
+        @endauth
+  </nav>
 
 
       @include('layouts.misdatos')

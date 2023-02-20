@@ -42,22 +42,15 @@ class EmprendimientoController extends Controller
 
     public function store(StoreEmprendimiento $request){
 
-        $users =User::all();
-
         if (auth()->user()->tipopersona_id == '2'){
-
-        $emprendimiento = Emprendimiento::create($request->all());
-        return redirect()->route('emprendimientos.index');
+            $emprendimiento = Emprendimiento::create($request->all());
+            return redirect()->route('emprendimientos.index');
         }else{
         $emprendimiento = new Emprendimiento();
-
         $emprendimiento->nombre_emprendimiento = $request->nombre_emprendimiento;
         $emprendimiento->clasificacion = $request->clasificacion;
         $emprendimiento->descripcion = $request->descripcion;
         $emprendimiento->user_id = auth()->user()->id;
-
-        
-
         $emprendimiento->save();
 
         return redirect()->route('perfilemp.me');
